@@ -1,3 +1,0 @@
-require 'rails_data_updater_analyzer'
-
-RailsDataUpdaterAnalyzer::UploadData.upload_data

@@ -1,0 +1,27 @@
+<%= flash[:notice] %>
+<h4>Import Data</h4>
+<%= form_tag import_british_datum_index_url, multipart: true do %>
+<%= file_field_tag :file%>
+<%= submit_tag "Import CSV" %>
+<% end %>
+
+<h4>Data</h4>
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Value</th>
+      <th>Field ID</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @british_data.each do |d| %>
+      <tr>
+        <td><%= d.id %></td>
+        <td><%= d.value %></td>
+        <td><%= d.field_id %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,7 +1,7 @@
 require "data_update_analyze/engine"
 
 module DataUpdateAnalyze
-  class DataParser
-  
-    end
+  class Engine < ::Rails::Engine
+    isolate_namespace DataUpdateAnalyze
+  end
 end

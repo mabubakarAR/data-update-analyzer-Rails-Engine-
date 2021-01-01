@@ -1,14 +1,13 @@
 module DataUpdateAnalyze
   class BritishDatum < ApplicationRecord
+    # belongs_to :table_fields
     # serialize :extra_columns, Hash
     require 'csv'
 
     def self.parse_data(file)
      new_hash = {}
      hash = {}
-    #  file_path = "/mnt/d/2016_census_profiles_by_health_region.csv"
-     csv = CSV.foreach(file.path, headers: true, :header_converters => lambda { |h| h.try(:downcase).try(:gsub,' ', '_') },
-      :converters => CSV::Converters[:nil_to_string] = lambda do |field| field.to_s end)
+     csv = CSV.foreach(file.path, headers: true, :converters => CSV::Converters[:nil_to_string] = lambda do |field| field.to_s end)
       csv.to_a.map do |row|
         new_hash = row.to_hash
         new_hash.keys.each do |column|

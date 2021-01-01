@@ -1,12 +1,18 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-gem 'jbuilder', '~> 2.5'
-gem 'pry'
 # Declare your gem's dependencies in data_update_analyze.gemspec.
 # Bundler will treat runtime dependencies like base dependencies, and
 # development dependencies will be added by default to the :development group.
 gemspec
+
+gem 'rails-assets-jquery', source: 'https://rails-assets.org'
+gem 'rails-assets-datatables', source: 'https://rails-assets.org'
+gem 'sprockets', '~> 4.0'
+gem 'kaminari'
+gem 'jbuilder', '~> 2.5'
+gem 'pry'
+
 
 # Declare any dependencies that are still in development here instead of in
 # your gemspec. These might include edge Rails or gems from your path or

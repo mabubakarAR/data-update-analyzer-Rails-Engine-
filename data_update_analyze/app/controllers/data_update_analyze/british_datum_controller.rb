@@ -4,7 +4,13 @@ module DataUpdateAnalyze
   class BritishDatumController < ApplicationController
 
     def index
-      @british_data = BritishDatum.all
+      @fields = TableField.all
+      @british_data = BritishDatum.joins("INNER JOIN data_update_analyze_table_fields ON data_update_analyze_british_data.field_id = data_update_analyze_table_fields.id").group(:field_id)
+      respond_to do |format|
+        format.html
+        format.json { render json: BritishDatatable.new(view_context) }
+      end
+      # render json: @british_data
     end
 
     def import

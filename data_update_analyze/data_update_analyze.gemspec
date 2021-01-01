@@ -18,6 +18,10 @@ Gem::Specification.new do |spec|
   spec.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
 
   spec.add_dependency "rails", "~> 5.2.4", ">= 5.2.4.4"
+  spec.add_runtime_dependency "rails-assets-jquery"
+  spec.add_runtime_dependency 'rails-assets-datatables'
+  spec.add_runtime_dependency "kaminari"
+  spec.add_runtime_dependency "pry"
 
   spec.add_development_dependency "sqlite3"
 end
